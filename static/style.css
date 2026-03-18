@@ -174,3 +174,16 @@ input, textarea, select {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+.export-link {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-weight: normal;
+    color: gray;
+    text-decoration: underline;
+}
+
+.export-link:visited {
+    color: gray;
+}

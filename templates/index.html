@@ -33,7 +33,20 @@
     </tbody>
 </table>
 
+<div style="width: 60%; margin: 8px auto 0 auto; text-align: left;">
+    <a href="/download" class="export-link">Export Ticket List</a>
+</div>
+
 </body>
 </html>
+
+<script>
+    document.querySelector(".export-link").addEventListener("click", function() {
+    this.textContent = "List exported!";
+    setTimeout(() => {
+        this.textContent = "Export Ticket List";
+    }, 3000);
+})
+</script>
 
 {% endblock %}
