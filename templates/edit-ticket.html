@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Ticket Details{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+
+
+    <label>Priority</label>
+    <div class="priority-group">
+        <button type="button" class="priority-btn low {% if ticket[3] == 'Low' %}active{% endif %}" onclick="selectPriority(this)">Low</button>
+        <button type="button" class="priority-btn medium {% if ticket[3] == 'Medium' %}active{% endif %}" onclick="selectPriority(this)">Medium</button>
+        <button type="button" class="priority-btn high {% if ticket[3] == 'High' %}active{% endif %}" onclick="selectPriority(this)">High</button>
+    </div>
+    <input type="hidden" id="priority" name="priority" value="{{ ticket[3] }}">
+
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" value="{{ ticket[1] }}">
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description">{{ ticket[2] }}</textarea>
+
+    <label for="status">Status</label>
+    <select id="status" name="status">
+        <option {% if ticket[4] == 'Opened' %}selected{% endif %}>Opened</option>
+        <option {% if ticket[4] == 'Active' %}selected{% endif %}>Active</option>
+        <option {% if ticket[4] == 'Closed' %}selected{% endif %}>Closed</option>
+    </select>
+
+    <button type="save">Save Edits</button>
+</form>
+
+ <script>
+     function selectPriority(btn) {
+         document.querySelectorAll('.priority-btn').forEach(b => b.classList.remove('active'));
+         btn.classList.add('active');
+         document.getElementById('priority').value = btn.textContent;
+        }
+ </script>
+
+{% endblock %}

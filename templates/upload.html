@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Upload CSV{% endblock %}
+
+{% block content %}
+
+<h3 style="width: 400px; margin: 0 auto 10px auto;">Upload a CSV file below</h3>
+<form enctype="multipart/form-data">
+    <div class="upload-box" onclick="document.getElementById('file-input').click()">
+        <p id="upload-label">Drop CSV file here or click to browse</p>
+        <p id="file-holder"></p>
+        <input type="file" id="file-input" accept=".csv" style="display: none;">
+    </div>
+
+    <button type="submit">Upload file</button>
+</form>
+
+
+<script>
+    document.getElementById("file-input").addEventListener("change",function (){
+        document.getElementById("upload-label").textContent = "Selected:";
+        document.getElementById("file-holder").textContent = this.files[0].name;
+        document.querySelector(".upload-box").style.background = "royalblue";
+        // document.querySelector(".upload-box p").style.color = "black";
+    })
+</script>
+{% endblock %}

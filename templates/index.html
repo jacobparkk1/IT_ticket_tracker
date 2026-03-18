@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+
+
+<div class="button-row">
+    <a href="/upload">Upload CSV</a>
+    <a href="/ticket/new">Create Ticket</a>
+</div>
+
+
+
+<table class="ticket-table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Created</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for ticket in tickets %}
+        <tr onclick="window.location='/ticket/{{ ticket[0] }}'">
+            <td>{{ ticket[1] }}</td>
+            <td>{{ ticket[3] }}</td>
+            <td>{{ ticket[4] }}</td>
+            <td>{{ ticket[5] }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+
+<div class="button-row">
+    <a href="/upload">Upload CSV</a>
+    <a href="/ticket/new">Create Ticket</a>
+</div>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Ticket ID</th>
+        <th>Title</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Created</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>{{ ticket[0] }}</td>
+        <td>{{ ticket[1] }}</td>
+        <td>{{ ticket[3] }}</td>
+        <td>{{ ticket[4] }}</td>
+        <td>{{ ticket[5] }}</td>
+    </tr>
+    </tbody>
+
+</table>
+
+<table class="description-table">
+    <thead>
+    <tr>
+        <th>Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>{{ ticket[2] }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div class="edit-button">
+
+    <a href="/ticket/edit/{{ticket[0]}}">Edit entry</a>
+
+</div>
+
+</body>
+
+
+
+{% endblock %}

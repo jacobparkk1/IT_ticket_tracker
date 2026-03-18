@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Ticket Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-left">
+        <a href="/">Dashboard</a>
+    </div>
+    <div class="nav-center">
+        <span>
+            <h1>Help Desk Ticket Tracker!</h1>
+            <p>Created by Jacob Park</p>
+        </span>
+    </div>
+    <div class="nav-right"></div>
+</nav>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
