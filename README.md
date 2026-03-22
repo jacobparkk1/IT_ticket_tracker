@@ -28,18 +28,20 @@ A lightweight web-based IT ticket management system built with Python and Flask.
 
 ```
 IT_ticket_tracker/
-├── app.py               # Flask application, all routes and database logic
-├── tickets.db           # SQLite database (auto-generated on first run)
+├── app.py                  # Flask application, all routes and database logic
+├── sample_tickets.csv      # Sample CSV file for testing the upload feature
 ├── static/
-│   └── style.css        # Stylesheet
+│   └── style.css           # Stylesheet
 └── templates/
-    ├── base.html        # Base layout template
-    ├── index.html       # Dashboard / ticket list
-    ├── new-ticket.html  # Create new ticket form
-    ├── edit-ticket.html # Edit existing ticket form
-    ├── ticket.html      # Individual ticket detail view
-    └── upload.html      # CSV upload page
+    ├── base.html           # Base layout template
+    ├── index.html          # Dashboard / ticket list
+    ├── new-ticket.html     # Create new ticket form
+    ├── edit-ticket.html    # Edit existing ticket form
+    ├── ticket.html         # Individual ticket detail view
+    └── upload.html         # CSV upload page
 ```
+
+> `tickets.db` is excluded from the repo via `.gitignore` and is auto-generated on first run.
 
 ---
 
@@ -81,9 +83,6 @@ title,description,priority,status,created_at
 - `status`: `Opened`, `Active`, `Closed` (case insensitive — `Open` is automatically corrected to `Opened`)
 - `created_at`: `YYYY-MM-DD HH:MM` format preferred — Excel's `MM/DD/YYYY HH:MM` format is automatically converted
 
-**Example row:**
-```
-Printer offline,Printer on 2nd floor not responding,High,Opened,2026-03-18 10:00
-```
+A sample CSV file (`sample_tickets.csv`) is included in the repo to test the upload feature with.
 
 ---

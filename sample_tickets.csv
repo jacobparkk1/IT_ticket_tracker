@@ -1,0 +1,5 @@
+title,description,priority,status,created_at
+Printer offline,Printer on 2nd floor not responding,High,Opened,2026-03-18 10:00
+Mouse not working,User reports mouse unresponsive on laptop,Low,Opened,2026-03-18 11:00
+Email not loading,Outlook not connecting to exchange server,Medium,Active,2026-03-18 12:00
+New user setup,Create AD account for new hire starting Monday,Medium,Opened,2026-03-19 09:00
